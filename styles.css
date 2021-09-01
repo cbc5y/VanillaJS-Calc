@@ -1,0 +1,63 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+/* how do i install other font-families? */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+}
+
+body{
+    padding: 0%;
+    margin: 0%;
+    background: linear-gradient(to right, red, blue);
+}
+
+.calculator-grid{
+ /* wut the h*ck is grid?? Whats the difference between justify-content and align-content and align-items? */
+    display: grid;
+    justify-content: center; //yo this is beeeastmode 3x
+    align-content: center; //yo this is beeeastmode 3x
+    min-height: 100vh; //yo this is beeeastmode 3x
+/* what is grid-template-columns/rows? */
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .65);
+    
+}
+
+.calculator-grid > button:hover {
+background-color: white;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output{
+/* what is grid-column?? */
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .65);
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding:10px;
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+.output .previous-operand {
+    color:rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color:rgba(255, 255, 255, 1.00);
+    font-size: 2.5rem;
+}
